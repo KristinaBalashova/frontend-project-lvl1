@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import {userName } from '../src/cli.js';
+onsole.log('Welcome to the Brain Games!');
+
