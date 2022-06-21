@@ -4,3 +4,4 @@
 ![example workflow](https://github.com/KristinaBalashova/frontend-project-lvl1/actions/workflows/makelint.yml/badge.svg)
 Link to ascinema of even-game https://asciinema.org/a/t0wYpZ3XYfKPw6ZGMhIjIYl1B
 Link to ascinema of calc-game https://asciinema.org/a/FsjVOK7M9FwLOAIkrCT1yESEX
+Link to ascinema of nod-game  https://asciinema.org/a/qVPKfdts2c4zPWGg1Hou1HfoX
