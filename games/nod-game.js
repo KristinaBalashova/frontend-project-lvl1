@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greeting, getRandomInt, userName } from '../src/index.js';
 
 export const nodGame = (name) => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 3; i > 0; i -= 1) {
     const nodOperation = (a, b) => {
-      while (a != 0 && b != 0) {
+      while (a !== 0 && b !== 0) {
         if (a > b) {
           a %= b;
         } else b %= a;

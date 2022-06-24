@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greeting, getRandomInt, userName } from '../src/index.js';
+import { getRandomInt } from '../src/index.js';
 
 export const calcGame = (name) => {
   console.log('What is the result of the expression?');
