@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { evenGame } from '../games/even-game.js';
+import primeGame from '../games/prime-game.js';
 import { greeting, getRandomInt } from '../src/index.js';
 
-evenGame(greeeting());
+primeGame(greeting());

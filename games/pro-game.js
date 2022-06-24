@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomInt, userName } from '../src/index.js';
+import { getRandomInt } from '../src/index.js';
 
 const progressionArray = () => { // a- стартовое число b - число, на которое меняется прогрессия
   const a = getRandomInt(1, 10);
@@ -35,7 +35,7 @@ export const progressionGame = (name) => {
 
     console.log(`Question: ${strArray}`);
 
-    let userAnswer = readlineSync.question('Your answer:');
+    const userAnswer = readlineSync.question('Your answer:');
     const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(.
 Correct answer was ${arifmArray[missedInd]}. Let us try again, ${name}!`;
 

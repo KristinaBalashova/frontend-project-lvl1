@@ -3,7 +3,7 @@
 import readlineSync from 'readline-sync';
 import { greeting, getRandomInt } from '../src/index.js';
 
-const evenGame = () => {
+export const evenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const isNumberEven = (num) => {
     if (num % 2 === 0) {
