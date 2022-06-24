@@ -6,8 +6,8 @@ const isPrime = (num) => {
     if (num % i === 0) {
       return 'no';
     }
-   return 'yes';
   }
+  return 'yes';
 };
 
 const primeGame = (name) => {
