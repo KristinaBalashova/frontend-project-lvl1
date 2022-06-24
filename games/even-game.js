@@ -15,7 +15,7 @@ const evenGame = (name) => {
 
   for (let i = 3; i > 0; i -= 1) {
     const randomNumber = getRandomInt(0, 100);
-    console.log(`Question:${randomNumber}`);
+    console.log(`Question: ${randomNumber}`);
     const userAnswer = readlineSync.question('Your answer:');
     if (userAnswer !== 'yes' && userAnswer !== 'no') {
       return console.log(gameEnd);
