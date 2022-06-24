@@ -1,8 +1,7 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { getRandomInt } from '../src/index.js';
 
-export const calcGame = (name) => {
+const calcGame = (name) => {
   console.log('What is the result of the expression?');
 
   for (let i = 3; i > 0; i -= 1) {
@@ -36,3 +35,5 @@ export const calcGame = (name) => {
 
   return console.log(`Congratulations, ${name}!`);
 };
+
+export default calcGame;

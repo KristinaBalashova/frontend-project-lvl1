@@ -23,7 +23,7 @@ const progression = (array, missedInd) => {
   return result;
 };
 
-export const progressionGame = (name) => {
+const progressionGame = (name) => {
   console.log('What number is missing in the progression?');
 
   for (let i = 3; i > 0; i -= 1) {
@@ -45,3 +45,5 @@ Correct answer was ${arifmArray[missedInd]}. Let us try again, ${name}!`;
   }
   return console.log(`Congratulations, ${name}!`);
 };
+
+export default progressionGame;

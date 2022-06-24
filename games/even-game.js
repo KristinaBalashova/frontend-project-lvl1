@@ -1,9 +1,7 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
-import { greeting, getRandomInt } from '../src/index.js';
+import { getRandomInt } from '../src/index.js';
 
-export const evenGame = () => {
+const evenGame = (name) => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const isNumberEven = (num) => {
     if (num % 2 === 0) {
@@ -31,3 +29,5 @@ export const evenGame = () => {
   }
   return console.log(`Congratulations, ${name}!`);
 };
+
+export default evenGame;
