@@ -24,7 +24,7 @@ const nodGame = (name) => {
     console.log(`Question: ${randomOperation}`);
     const userAnswer = readlineSync.question('Your answer:');
     const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(. Correct answer was ${nodOperation(randomNubmer1, randomNubmer2)}.
-    Let us try again, ${name}!`;
+Let's try again, ${name}!`;
 
     if (Number(userAnswer) === nodOperation(randomNubmer1, randomNubmer2)) {
       console.log('Correct!');

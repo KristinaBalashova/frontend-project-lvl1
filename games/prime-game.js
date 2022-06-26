@@ -19,7 +19,7 @@ const primeGame = (name) => {
     console.log(`Question: ${randomNum}`);
 
     const userAnswer = readlineSync.question('Your answer:');
-    const wrongAnswer = `${userAnswer} is wrong answer ;(. Correct answer was ${rigthAnswer}. Let us try again, ${name}!`;
+    const wrongAnswer = `${userAnswer} is wrong answer ;(. Correct answer was ${rigthAnswer}. Let's try again, ${name}!`;
 
     if (userAnswer === rigthAnswer) {
       console.log('Correct!');

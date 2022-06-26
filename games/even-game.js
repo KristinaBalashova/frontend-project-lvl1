@@ -9,9 +9,9 @@ const evenGame = (name) => {
     }
     return 'no';
   };
-  const gameEnd = `Sorry, you need to answer "yes" or "no". End of the game. Let us try again, ${name}!`;
-  const wrongAnswerNo = `"no" is wrong answer ;(. Correct answer was "yes". Let us try again, ${name}!`;
-  const wrongAnswerYes = `"yes" is wrong answer ;(. Correct answer was "no". Let us try again, ${name}!`;
+  const gameEnd = `Sorry, you need to answer "yes" or "no". End of the game. Let's try again, ${name}!`;
+  const wrongAnswerNo = `"no" is wrong answer ;(. Correct answer was "yes". Let's try again, ${name}!`;
+  const wrongAnswerYes = `"yes" is wrong answer ;(. Correct answer was "no". Let's try again, ${name}!`;
 
   for (let i = 3; i > 0; i -= 1) {
     const randomNumber = getRandomInt(0, 100);

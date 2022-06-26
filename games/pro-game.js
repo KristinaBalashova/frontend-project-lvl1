@@ -37,7 +37,7 @@ const progressionGame = (name) => {
 
     const userAnswer = readlineSync.question('Your answer:');
     const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(.
-Correct answer was ${arifmArray[missedInd]}. Let us try again, ${name}!`;
+Correct answer was ${arifmArray[missedInd]}. Let's try again, ${name}!`;
 
     if (Number(userAnswer) === arifmArray[missedInd]) {
       console.log('Correct!');

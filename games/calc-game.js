@@ -26,7 +26,8 @@ const calcGame = (name) => {
     const questionResult = randomOperation();
     console.log(`Question: ${questionResult[0]}`);
     const userAnswer = readlineSync.question('Your answer:');
-    const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(. Correct answer was ${questionResult[1]}. Let us try again, ${name}!`;
+    const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(. Correct answer was ${questionResult[1]}.
+Let's try again, ${name}!`;
 
     if (Number(userAnswer) === questionResult[1]) {
       console.log('Correct!');
