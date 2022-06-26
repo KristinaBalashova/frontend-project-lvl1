@@ -11,7 +11,7 @@ const calcGame = (name) => {
 
       const signs = ['+', '-', '*'];
       const sign = signs[getRandomInt(0, 3)];
-      const question = `${randomNubmer1}${sign}${randomNubmer2}`;
+      const question = `${randomNubmer1} ${sign} ${randomNubmer2}`;
 
       let result;
 
