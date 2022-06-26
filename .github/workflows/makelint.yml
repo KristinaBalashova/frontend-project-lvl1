@@ -1,8 +1,14 @@
-name: make-lint
+name: eslint
+
 on: push
+
 jobs:
-	lint:
-		runs-on: ubuntu-latest
-		steps:
-			- uses: actions/checkout@v2
-			- run: make lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: install
+        run: make install
+      - name: ESLint test
+        run: make lint
