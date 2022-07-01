@@ -1,13 +1,10 @@
 import readlineSync from 'readline-sync';
+import { gameRule } from '/home/neverberrie/frontend-project-lvl1/src/games/calc-game.js'
 
-export const userName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  return name;
-};
 export const greeting = () => {
   console.log('Welcome to the Brain Games!');
-  const name = userName();
-  console.log(`Hello,${name}`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
   return name;
 };
 
@@ -18,3 +15,31 @@ export function getRandomInt(min, max) {
   b = Math.floor(b);
   return Math.floor(Math.random() * (b - a)) + a;
 }
+
+export const lastCongrats = (name) => {
+  console.log(`Congratulations, ${name}!`);
+};
+
+export const getAnswer = () => {
+  const userAnswer = readlineSync.question('Your answer:');
+  return userAnswer;
+};
+
+export const showIfAnswerRigth = () => {
+  console.log('Correct!');
+};
+
+export const gameLoop = (game) => {
+  let isSuccess = false;
+  const name = greeting();
+  gameRule();
+
+  for (let i = 3; i > 0; i -= 1) {
+    isSuccess = game(name);
+
+    if (isSuccess === false) {
+      return;
+    }
+  }
+  lastCongrats(name);
+};

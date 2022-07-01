@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/KristinaBalashova/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/KristinaBalashova/frontend-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/KristinaBalashova/frontend-project-lvl1/maintainability)
 [![eslint](https://github.com/KristinaBalashova/frontend-project-lvl1/actions/workflows/makelint.yml/badge.svg)](https://github.com/KristinaBalashova/frontend-project-lvl1/actions/workflows/makelint.yml)
 
 # Welcone to Brain Games
