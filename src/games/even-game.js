@@ -1,33 +1,33 @@
-import readlineSync from 'readline-sync';
-import { getRandomInt } from '../src/index.js';
+import { getRandomInt, getAnswer, showIfAnswerRigth } from '../index.js';
 
-const evenGame = (name) => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const isNumberEven = (num) => {
-    if (num % 2 === 0) {
-      return 'yes';
-    }
-    return 'no';
-  };
-  const gameEnd = `Sorry, you need to answer "yes" or "no". End of the game. Let's try again, ${name}!`;
-  const wrongAnswerNo = `"no" is wrong answer ;(. Correct answer was "yes". Let's try again, ${name}!`;
-  const wrongAnswerYes = `"yes" is wrong answer ;(. Correct answer was "no". Let's try again, ${name}!`;
+const gameRule = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  for (let i = 3; i > 0; i -= 1) {
-    const randomNumber = getRandomInt(0, 100);
-    console.log(`Question: ${randomNumber}`);
-    const userAnswer = readlineSync.question('Your answer:');
-    if (userAnswer !== 'yes' && userAnswer !== 'no') {
-      return console.log(gameEnd);
-    }
-
-    if (isNumberEven(randomNumber) === userAnswer) {
-      console.log('Correct!');
-    } else if (isNumberEven(randomNumber) !== userAnswer && userAnswer === 'yes') {
-      return console.log(wrongAnswerYes);
-    } else return console.log(wrongAnswerNo);
+const isNumberEven = (num) => {
+  if (num % 2 === 0) {
+    return 'yes';
   }
-  return console.log(`Congratulations, ${name}!`);
+  return 'no';
 };
 
-export default evenGame;
+const evenGame = (name) => {
+  const undefinedAnswer = `Sorry, you need to answer "yes" or "no". End of the game. Let's try again, ${name}!`;
+
+  const randomNumber = getRandomInt(0, 100);
+  console.log(`Question: ${randomNumber}`);
+  const userAnswer = getAnswer();
+  const wrongAnswer = `${userAnswer} is wrong answer ;(. Correct answer was ${isNumberEven(randomNumber)}.
+      Let's try again, ${name}!`;
+  if (userAnswer !== 'yes' && userAnswer !== 'no') {
+    return console.log(undefinedAnswer);
+  }
+
+  if (isNumberEven(randomNumber) === userAnswer) {
+    showIfAnswerRigth();
+    return true;
+  }
+  console.log(wrongAnswer);
+
+  return false;
+};
+
+export { gameRule, evenGame };
