@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { getRandomInt, getAnswer, showIfAnswerRigth } from '../index.js';
 
 const randomOperation = () => {
@@ -25,7 +24,7 @@ export const gameRule = () => console.log('What is the result of the expression?
 const calcGame = (name) => {
   const questionResult = randomOperation();
   console.log(`Question: ${questionResult[0]}`);
-  let userAnswer = Number(getAnswer());
+  const userAnswer = Number(getAnswer());
   const wrongAnswer = `${userAnswer} is wrong answer ;(. Correct answer was ${questionResult[1]}.
       Let's try again, ${name}!`;
 

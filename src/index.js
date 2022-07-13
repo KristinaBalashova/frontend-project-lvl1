@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import { gameRule } from '/home/neverberrie/frontend-project-lvl1/src/games/calc-game.js'
 
 export const greeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -29,10 +28,10 @@ export const showIfAnswerRigth = () => {
   console.log('Correct!');
 };
 
-export const gameLoop = (game) => {
+export const gameLoop = (game, rule) => {
   let isSuccess = false;
   const name = greeting();
-  gameRule();
+  rule();
 
   for (let i = 3; i > 0; i -= 1) {
     isSuccess = game(name);
