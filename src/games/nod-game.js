@@ -1,37 +1,35 @@
-import readlineSync from 'readline-sync';
+import { getRandomInt, getAnswer, showIfAnswerRigth } from '../index.js';
 
-const nodGame = (name) => {
-  console.log('Find the greatest common divisor of given numbers.');
+const gameRule = () => console.log('Find the greatest common divisor of given numbers.');
 
-  for (let i = 3; i > 0; i -= 1) {
-    const nodOperation = (num1, num2) => {
-      let a = num1;
-      let b = num2;
-      while (a !== 0 && b !== 0) {
-        if (a > b) {
-          a %= b;
-        } else b %= a;
-      }
-
-      const result = a + b;
-      return result;
-    };
-
-    const randomNubmer1 = Math.floor(Math.random() * 100);
-    const randomNubmer2 = Math.floor(Math.random() * 100);
-    const randomOperation = `${randomNubmer1} ${randomNubmer2}`;
-
-    console.log(`Question: ${randomOperation}`);
-    const userAnswer = readlineSync.question('Your answer:');
-    const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(. Correct answer was ${nodOperation(randomNubmer1, randomNubmer2)}.
-Let's try again, ${name}!`;
-
-    if (Number(userAnswer) === nodOperation(randomNubmer1, randomNubmer2)) {
-      console.log('Correct!');
-    } else return console.log(wrongAnswer);
+const getNOD = (num1, num2) => {
+  let a = num1;
+  let b = num2;
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else b %= a;
   }
 
-  return console.log(`Congratulations, ${name}!`);
+  const result = a + b;
+  return result;
 };
 
-export default nodGame;
+const nodGame = (name) => {
+  const randomNubmer1 = getRandomInt(0, 10);
+  const randomNubmer2 = getRandomInt(0, 10);
+  const randomOperation = `${randomNubmer1} ${randomNubmer2}`;
+
+  console.log(`Question: ${randomOperation}`);
+  const userAnswer = getAnswer();
+  const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(. Correct answer was ${getNOD(randomNubmer1, randomNubmer2)}. Let us try again, ${name}!`;
+
+  if (Number(userAnswer) === getNOD(randomNubmer1, randomNubmer2)) {
+    showIfAnswerRigth();
+    return true;
+  }
+  console.log(wrongAnswer);
+  return false;
+};
+
+export { gameRule, nodGame };

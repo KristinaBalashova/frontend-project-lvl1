@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import { getRandomInt } from '../src/index.js';
+import { getRandomInt, getAnswer, showIfAnswerRigth } from '../index.js';
 
 const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
@@ -9,23 +8,23 @@ const isPrime = (num) => {
   }
   return 'yes';
 };
+const gameRule = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const primeGame = (name) => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const randomNum = getRandomInt(2, 20);
+  const rigthAnswer = isPrime(randomNum);
+  console.log(`Question: ${randomNum}`);
+  const userAnswer = getAnswer();
 
-  for (let i = 3; i > 0; i -= 1) {
-    const randomNum = getRandomInt(2, 20);
-    const rigthAnswer = isPrime(randomNum);
-    console.log(`Question: ${randomNum}`);
+  const wrongAnswer = `${userAnswer} is wrong answer ;(. Correct answer was ${rigthAnswer}. Let's try again, ${name}!`;
 
-    const userAnswer = readlineSync.question('Your answer:');
-    const wrongAnswer = `${userAnswer} is wrong answer ;(. Correct answer was ${rigthAnswer}. Let's try again, ${name}!`;
-
-    if (userAnswer === rigthAnswer) {
-      console.log('Correct!');
-    } else return console.log(wrongAnswer);
+  if (userAnswer === rigthAnswer) {
+    showIfAnswerRigth();
+    return true;
   }
-  return console.log(`Congratulations, ${name}!`);
+
+  console.log(wrongAnswer);
+  return false;
 };
 
-export default primeGame;
+export { gameRule, primeGame };
