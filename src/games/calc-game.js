@@ -19,7 +19,7 @@ const randomOperation = () => {
   return [question, result];
 };
 
-export const gameRule = () => console.log('What is the result of the expression?');
+const gameRule = () => console.log('What is the result of the expression?');
 
 const calcGame = (name) => {
   const questionResult = randomOperation();
@@ -37,4 +37,4 @@ const calcGame = (name) => {
   return false;
 };
 
-export default calcGame;
+export { gameRule, calcGame };
