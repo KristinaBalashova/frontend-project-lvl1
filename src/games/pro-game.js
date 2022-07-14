@@ -1,7 +1,6 @@
-import readlineSync from 'readline-sync';
-import { getRandomInt } from '../src/index.js';
+import { getRandomInt, getAnswer, showIfAnswerRigth } from '../index.js';
 
-const progressionArray = () => { // a- стартовое число b - число, на которое меняется прогрессия
+const getProgressionArray = () => { // a- стартовое число b - число, на которое меняется прогрессия
   const a = getRandomInt(1, 10);
   const b = getRandomInt(1, 6);
   const array = [a];
@@ -11,7 +10,7 @@ const progressionArray = () => { // a- стартовое число b - чис�
   return array;
 };
 
-const progression = (array, missedInd) => {
+const progressionWithMissedInd = (array, missedInd) => {
   let result = '';
   let i;
   for (i = 0; i < array.length; i += 1) {
@@ -23,27 +22,30 @@ const progression = (array, missedInd) => {
   return result;
 };
 
+const gameRule = () => console.log('What number is missing in the progression?');
+
 const progressionGame = (name) => {
   console.log('What number is missing in the progression?');
 
-  for (let i = 3; i > 0; i -= 1) {
-    const arifmArray = progressionArray();
+  const arifmArray = getProgressionArray();
 
-    const missedInd = getRandomInt(1, 10);
+  const missedInd = getRandomInt(1, 10);
 
-    const strArray = progression(arifmArray, missedInd);
-
-    console.log(`Question: ${strArray}`);
-
-    const userAnswer = readlineSync.question('Your answer:');
-    const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(.
+  const getProgression = progressionWithMissedInd(arifmArray, missedInd);
+  console.log(`Question: ${getProgression}`);
+  const userAnswer = getAnswer();
+  const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(.
+    
 Correct answer was ${arifmArray[missedInd]}. Let's try again, ${name}!`;
 
-    if (Number(userAnswer) === arifmArray[missedInd]) {
-      console.log('Correct!');
-    } else return console.log(wrongAnswer);
+  if (Number(userAnswer) === arifmArray[missedInd]) {
+    showIfAnswerRigth();
+    return true;
   }
-  return console.log(`Congratulations, ${name}!`);
+
+  console.log(wrongAnswer);
+
+  return false;
 };
 
-export default progressionGame;
+export { gameRule, progressionGame };
