@@ -6,13 +6,13 @@
 # Welcone to Brain Games
 ## Brain-games are simple console games with basic arithmetics
 **Asciinema of even-game**
-[![asciicast](https://asciinema.org/a/t0wYpZ3XYfKPw6ZGMhIjIYl1B.svg)](https://asciinema.org/a/he1gqAXEXig8mLuLgnQIfwuFR)
+[![asciicast](https://asciinema.org/a/he1gqAXEXig8mLuLgnQIfwuFR.svg)](https://asciinema.org/a/he1gqAXEXig8mLuLgnQIfwuFR)
 
 **Asciinema of calc-game**
-[![asciicast](https://asciinema.org/a/FsjVOK7M9FwLOAIkrCT1yESEX.svg)](https://asciinema.org/a/2CEVVNlmj1U4xrtIvDDezXReN)
+[![asciicast](https://asciinema.org/a/2CEVVNlmj1U4xrtIvDDezXReN.svg)](https://asciinema.org/a/2CEVVNlmj1U4xrtIvDDezXReN)
 
 **Asciinema of gcd-game**
-[![asciicast](https://asciinema.org/a/qVPKfdts2c4zPWGg1Hou1HfoX.svg)](https://asciinema.org/a/O0OYcMLx68n7ZPtKbyKbuJq3h)
+[![asciicast](https://asciinema.org/a/O0OYcMLx68n7ZPtKbyKbuJq3h.svg)](https://asciinema.org/a/O0OYcMLx68n7ZPtKbyKbuJq3h)
 
 **Asciinema of progression-game**
 [![asciicast](https://asciinema.org/a/c14Xh5GVdPU7keKvhhcsXR411.svg)](https://asciinema.org/a/c14Xh5GVdPU7keKvhhcsXR411)
