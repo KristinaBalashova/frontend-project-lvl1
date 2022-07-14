@@ -22,7 +22,7 @@ const nodGame = (name) => {
 
   console.log(`Question: ${randomOperation}`);
   const userAnswer = getAnswer();
-  const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(. Correct answer was ${getNOD(randomNubmer1, randomNubmer2)}. Let us try again, ${name}!`;
+  const wrongAnswer = `${Number(userAnswer)} is wrong answer ;(. Correct answer was ${getNOD(randomNubmer1, randomNubmer2)}. Let's try again, ${name}!`;
 
   if (Number(userAnswer) === getNOD(randomNubmer1, randomNubmer2)) {
     showIfAnswerRigth();
