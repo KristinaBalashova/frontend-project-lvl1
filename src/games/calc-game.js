@@ -1,11 +1,13 @@
-import { getRandomInt, getAnswer, showIfAnswerRigth } from '../index.js';
+import getRandomInt from '../utils.js';
 
-const randomOperation = () => {
-  const randomNubmer1 = Math.floor(Math.random() * 100);
-  const randomNubmer2 = Math.floor(Math.random() * 100);
+export const gameRule = () => console.log('What is the result of the expression?');
+
+const calcGame = () => {
+  const randomNubmer1 = getRandomInt(0, 10);
+  const randomNubmer2 = getRandomInt(0, 10);
 
   const signs = ['+', '-', '*'];
-  const sign = signs[getRandomInt(0, 3)];
+  const sign = signs[getRandomInt(0, 2)];
   const question = `${randomNubmer1} ${sign} ${randomNubmer2}`;
 
   let result;
@@ -19,22 +21,4 @@ const randomOperation = () => {
   return [question, result];
 };
 
-const gameRule = () => console.log('What is the result of the expression?');
-
-const calcGame = (name) => {
-  const questionResult = randomOperation();
-  console.log(`Question: ${questionResult[0]}`);
-  const userAnswer = Number(getAnswer());
-  const wrongAnswer = `${userAnswer} is wrong answer ;(. Correct answer was ${questionResult[1]}.
-      Let's try again, ${name}!`;
-
-  if (userAnswer === questionResult[1]) {
-    showIfAnswerRigth();
-    return true;
-  }
-
-  console.log(wrongAnswer);
-  return false;
-};
-
-export { gameRule, calcGame };
+export { calcGame };

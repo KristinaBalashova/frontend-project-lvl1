@@ -7,14 +7,6 @@ export const greeting = () => {
   return name;
 };
 
-export function getRandomInt(min, max) {
-  let a = min;
-  let b = max;
-  a = Math.ceil(a);
-  b = Math.floor(b);
-  return Math.floor(Math.random() * (b - a)) + a;
-}
-
 export const lastCongrats = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
@@ -28,15 +20,30 @@ export const showIfAnswerRigth = () => {
   console.log('Correct!');
 };
 
+export const wrongAnswer = (userAnswer, rightAnswer, name) => `${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}. Let's try again, ${name}!`;
+
+export const checkResult = (userAnswer, rigthAnswer, name) => {
+  if (String(userAnswer) === String(rigthAnswer)) {
+    showIfAnswerRigth();
+    return true;
+  }
+
+  console.log(wrongAnswer(userAnswer, rigthAnswer, name));
+  return false;
+};
+
+export const askQuestion = (operation) => console.log(`Question: ${operation}`);
+
 export const gameLoop = (game, rule) => {
-  let isSuccess = false;
   const name = greeting();
   rule();
 
   for (let i = 3; i > 0; i -= 1) {
-    isSuccess = game(name);
-
-    if (isSuccess === false) {
+    const questionAnswer = game();
+    askQuestion(questionAnswer[0]);
+    const userAnswer = getAnswer();
+    const isCorrect = checkResult(userAnswer, questionAnswer[1], name);
+    if (!isCorrect) {
       return;
     }
   }
