@@ -1,18 +1,14 @@
 import getRandomInt from '../utils.js';
 
-const gameRule = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (num) => num % 2 === 0;
 
 const evenGame = () => {
   const randomNumber = getRandomInt(0, 100);
 
-  const isNumberEven = (num) => {
-    if (num % 2 === 0) {
-      return 'yes';
-    }
-    return 'no';
-  };
-
-  return [randomNumber, isNumberEven(randomNumber)];
+  const answer = isEven(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, answer];
 };
 
 export { gameRule, evenGame };

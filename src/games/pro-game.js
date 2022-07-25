@@ -22,7 +22,7 @@ const progressionWithMissedInd = (array, missedInd) => {
   return result;
 };
 
-const gameRule = () => console.log('What number is missing in the progression?');
+const gameRule = 'What number is missing in the progression?';
 
 const progressionGame = () => {
   const arifmArray = getProgressionArray();

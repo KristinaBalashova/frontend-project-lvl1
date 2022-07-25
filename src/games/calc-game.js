@@ -1,24 +1,24 @@
 import getRandomInt from '../utils.js';
 
-export const gameRule = () => console.log('What is the result of the expression?');
+export const gameRule = 'What is the result of the expression?';
 
-const calcGame = () => {
-  const randomNubmer1 = getRandomInt(0, 10);
-  const randomNubmer2 = getRandomInt(0, 10);
-
+const calc = (num1, num2) => {
   const signs = ['+', '-', '*'];
   const sign = signs[getRandomInt(0, 2)];
-  const question = `${randomNubmer1} ${sign} ${randomNubmer2}`;
-
-  let result;
-
+  const question = `${num1} ${sign} ${num2}`;
+  let result = 0;
   if (sign === '+') {
-    result = randomNubmer1 + randomNubmer2;
+    result = num1 + num2;
   } else if (sign === '-') {
-    result = randomNubmer1 - randomNubmer2;
-  } else result = randomNubmer1 * randomNubmer2;
-
+    result = num1 - num2;
+  } else result = num1 * num2;
   return [question, result];
+};
+
+const calcGame = () => {
+  const randomNumber1 = getRandomInt(0, 10);
+  const randomNumber2 = getRandomInt(0, 10);
+  return calc(randomNumber1, randomNumber2);
 };
 
 export { calcGame };

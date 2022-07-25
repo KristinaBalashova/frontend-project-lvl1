@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { gameLoop } from '../src/index.js';
-import { nodGame, gameRule } from '../src/games/nod-game.js';
+import gameLoop from '../src/index.js';
+import { gcdGame, gameRule } from '../src/games/gcd-game.js';
 
-gameLoop(nodGame, gameRule);
+gameLoop(gcdGame, gameRule);
