@@ -1,37 +1,31 @@
 import getRandomInt from '../utils.js';
 
-const getProgressionArray = () => { // a- стартовое число b - число, на которое меняется прогрессия
-  const a = getRandomInt(1, 10);
-  const b = getRandomInt(1, 6);
-  const array = [a];
-  for (let i = 1; i < 10; i += 1) {
-    array.push(array[i - 1] + b);
-  }
-  return array;
-};
+const getProgression = (start, step, length) => {
+  const arr = [start];
 
-const progressionWithMissedInd = (array, missedInd) => {
-  let result = '';
-  let i;
-  for (i = 0; i < array.length; i += 1) {
-    if (i !== missedInd) {
-      result += `${array[i]} `;
-    } else result += '.. ';
+  for (let i = 1; i < length; i += 1) {
+    arr.push(arr[i - 1] + step);
   }
 
-  return result;
+  return arr;
 };
 
 const gameRule = 'What number is missing in the progression?';
 
 const progressionGame = () => {
-  const arifmArray = getProgressionArray();
+  const arrStart = getRandomInt(1, 10);
+  const arrStep = getRandomInt(1, 5);
+  const arrLength = getRandomInt(10, 13);
 
-  const missedInd = getRandomInt(1, 9);
+  const arifmArray = getProgression(arrStart, arrStep, arrLength);
 
-  const getProgression = progressionWithMissedInd(arifmArray, missedInd);
+  const missedInd = getRandomInt(1, arrLength);
 
-  return [getProgression, arifmArray[missedInd]];
+  const missedElement = arifmArray[missedInd];
+
+  arifmArray[missedInd] = '..';
+
+  return [arifmArray.join(' '), missedElement];
 };
 
 export { gameRule, progressionGame };

@@ -1,9 +1,13 @@
 import readlineSync from 'readline-sync';
 
-const gameLoop = (game, rule) => {
+export const greeting = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
+  return name;
+};
+const gameLoop = (game, rule) => {
+  const name = greeting();
   console.log(rule);
 
   for (let i = 3; i > 0; i -= 1) {
