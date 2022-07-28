@@ -13,13 +13,13 @@ const getProgression = (start, step, length) => {
 const gameRule = 'What number is missing in the progression?';
 
 const progressionGame = () => {
-  const arrStart = getRandomInt(1, 10);
+  const arrStart = getRandomInt(1, 5);
   const arrStep = getRandomInt(1, 5);
   const arrLength = getRandomInt(10, 13);
 
   const progression = getProgression(arrStart, arrStep, arrLength);
 
-  const missedInd = getRandomInt(1, arrLength);
+  const missedInd = getRandomInt(1, arrLength - 1);
 
   const missedElement = progression[missedInd];
 
