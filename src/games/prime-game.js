@@ -4,15 +4,15 @@ const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      return true;
+      return false;
     }
   }
-  return false;
+  return true;
 };
 const primeGame = () => {
   const randomNum = getRandomInt(2, 20);
 
-  const answer = isPrime(randomNum) ? 'no' : 'yes';
+  const answer = isPrime(randomNum) ? 'yes' : 'no';
   return [randomNum, answer];
 };
 

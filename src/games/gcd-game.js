@@ -20,7 +20,7 @@ const gcdGame = () => {
   const randomNubmer2 = getRandomInt(0, 10);
   const randomOperation = `${randomNubmer1} ${randomNubmer2}`;
 
-  return [randomOperation, getGCD(randomNubmer1, randomNubmer2)];
+  return [randomOperation, String(getGCD(randomNubmer1, randomNubmer2))];
 };
 
 export { gameRule, gcdGame };

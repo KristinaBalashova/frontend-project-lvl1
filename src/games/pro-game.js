@@ -17,15 +17,15 @@ const progressionGame = () => {
   const arrStep = getRandomInt(1, 5);
   const arrLength = getRandomInt(10, 13);
 
-  const arifmArray = getProgression(arrStart, arrStep, arrLength);
+  const progression = getProgression(arrStart, arrStep, arrLength);
 
   const missedInd = getRandomInt(1, arrLength);
 
-  const missedElement = arifmArray[missedInd];
+  const missedElement = progression[missedInd];
 
-  arifmArray[missedInd] = '..';
+  progression[missedInd] = '..';
 
-  return [arifmArray.join(' '), missedElement];
+  return [progression.join(' '), String(missedElement)];
 };
 
 export { gameRule, progressionGame };
