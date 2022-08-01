@@ -1,4 +1,5 @@
 import getRandomInt from '../utils.js';
+import getRound from '../index.js';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
@@ -23,4 +24,6 @@ const gcdGame = () => {
   return [randomOperation, String(getGCD(randomNubmer1, randomNubmer2))];
 };
 
-export { gameRule, gcdGame };
+const playGame = () => getRound(gcdGame, gameRule);
+
+export default playGame;
