@@ -1,5 +1,5 @@
 import getRandomInt from '../utils.js';
-import getRound from '../index.js';
+import play from '../index.js';
 
 const getProgression = (start, step, length) => {
   const arr = [start];
@@ -29,6 +29,6 @@ const progressionGame = () => {
   return [progression.join(' '), String(missedElement)];
 };
 
-const playGame = () => getRound(progressionGame, gameRule);
+const playGame = () => play(progressionGame, gameRule);
 
 export default playGame;
