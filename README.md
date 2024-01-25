@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/KristinaBalashova/frontend-project-lvl1/maintainability)
 [![eslint](https://github.com/KristinaBalashova/frontend-project-lvl1/actions/workflows/makelint.yml/badge.svg)](https://github.com/KristinaBalashova/frontend-project-lvl1/actions/workflows/makelint.yml)
 
-# Welcone to Brain Games
+# Welcome to Brain Games
 ## Brain-games are simple console games with basic arithmetics
 **Asciinema of even-game**
 [![asciicast](https://asciinema.org/a/he1gqAXEXig8mLuLgnQIfwuFR.svg)](https://asciinema.org/a/he1gqAXEXig8mLuLgnQIfwuFR)
